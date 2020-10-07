@@ -1,35 +1,37 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: add-deployment
+  name: api-deployment
   labels:
-    app: add
+    app: api
 spec:
   selector:
     matchLabels:
-      app: add
+      app: api
   replicas: 1
   template:
     metadata:
       labels:
-        app: add
+        app: api
     spec:
       containers:
-      - name: add
-        image: tanjunchen/add-service:v1.0
+      - name: api
+        image: tanjunchen/api-debug:v1.0
         imagePullPolicy: IfNotPresent
         ports:
-        - name: add-service
-          containerPort: 3000
+          - name: api-service
+            containerPort: 8080
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: add-service
+  name: api-service
 spec:
   selector:
-    app: add
+    app: api
   ports:
-    - port: 3000
-      targetPort: add-service
+    - name: http
+      port: 8080
+      nodePort: 30080
+  type: NodePort

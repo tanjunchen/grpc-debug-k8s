@@ -15,12 +15,12 @@ spec:
         app: api
     spec:
       containers:
-        - name: api
-          image: tanjunchen/api-debug:v1.0
-          imagePullPolicy: IfNotPresent
-          ports:
-            - name: api-service
-              containerPort: 8080
+      - name: api
+        image: tanjunchen/api-service:v1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+          - name: api-service
+            containerPort: 8080
 
 ---
 apiVersion: v1
