@@ -3,23 +3,15 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/gorilla/mux"
-	"github.com/shuza/kubernetes-go-grpc/pd"
-	"golang.org/x/net/context"
-	"google.golang.org/grpc"
 	"net/http"
 	"strconv"
 	"time"
-)
 
-/**
- * :=  created by:  Shuza
- * :=  create date:  29-Jan-2019
- * :=  (C) CopyRight Shuza
- * :=  www.shuza.ninja
- * :=  shuza.sa@gmail.com
- * :=  Fun  :  Coffee  :  Code
- **/
+	"github.com/gorilla/mux"
+	pb "github.com/tanjunchen/grpc-debug-k8s/pd"
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
+)
 
 func main() {
 	//	Connect to Add service

@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: api
-          image: shuzasa/api-service:v1.0
+          image: tanjunchen/api-debug:v1.0
+          imagePullPolicy: IfNotPresent
           ports:
             - name: api-service
               containerPort: 8080

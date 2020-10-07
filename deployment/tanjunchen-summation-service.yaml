@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: add
-        image: shuzasa/add-service:v1.2
+        image: tanjunchen/add-service:v1.0
+        imagePullPolicy: IfNotPresent
         ports:
         - name: add-service
           containerPort: 3000

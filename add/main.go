@@ -2,22 +2,14 @@ package main
 
 import (
 	"fmt"
-	"github.com/shuza/kubernetes-go-grpc/pd"
+	"log"
+	"net"
+
+	pb "github.com/tanjunchen/grpc-debug-k8s/pd"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
-	"log"
-	"net"
 )
-
-/**
- * :=  created by:  Shuza
- * :=  create date:  29-Jan-2019
- * :=  (C) CopyRight Shuza
- * :=  www.shuza.ninja
- * :=  shuza.sa@gmail.com
- * :=  Fun  :  Coffee  :  Code
- **/
 
 type server struct{}
 
